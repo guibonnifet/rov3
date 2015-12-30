@@ -1,0 +1,41 @@
+<head>
+		<link rel="stylesheet"  href="/stylesheets/style.css" type="text/css">
+        <meta charset="utf-8" />
+		<script src="/javascripts/jquery-2.1.4.min.js"></script>
+		<script src="/javascripts/socket.io-1.3.5.js"></script>
+        <script src="/javascripts/setjoystick.js"></script>
+    
+    <title>ROV OLERON</title>
+
+
+
+<style>
+    .buttons, .axes {
+      padding: 1em;
+    }
+
+    .button {
+      padding: 1em;
+      border-radius: 20px;
+      border: 1px solid black;
+      background-size: 0% 0%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    .pressed {
+      border: 1px solid red;
+    }
+</style>
+    
+    </head>
+
+<body>
+    <div id="setaxe"></div>
+   <p id="p0"></p>
+    <p id="p1"></p>
+   <p id="p2"></p> 
+   <p id="p3"></p> 
+    
+  <p><input type="button" value=minaxe[0] id="mot2avance" /></p>
+</body>
