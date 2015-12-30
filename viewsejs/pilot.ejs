@@ -1,0 +1,278 @@
+<head>
+<link rel="stylesheet"  href="/stylesheets/style.css" type="text/css">
+<link rel="stylesheet"  href="/stylesheets/flightindicators.css" />
+<meta charset="utf-8" />
+<script src="/javascripts/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/socket.io-1.3.5.js"></script>
+<script src="/javascripts/config.js"></script>
+<script src="/javascripts/moteur.js"></script>
+   
+<script src="/javascripts/chronotest1.js"></script>
+<script src="/javascripts/jquery.flightindicators.js"></script>
+
+<title>ROV OLERON</title>
+    
+</head>
+
+<body>
+    
+<script>
+    //var test = require(/javascripts/config);
+</script>
+
+<h6 id="start">Press a button on your controller to start</h6>
+
+
+    <script>var socket = io.connect('192.168.2.39:3000');
+     //var username = prompt('What\'s your username?');
+</script>
+
+
+<%
+
+
+var speed1 =90;
+var speed2 =90;
+var speed3 =90;
+var debut;
+var tempsplonge;
+   
+%>
+ <script type="text/javascript">   
+  //<div>
+//<iframe src="http://192.168.2.39:8085/?action=stream" width="650" height="500" name="camerarov" id="camerarov"></iframe>
+ //</div>     
+  </script> 
+<div>
+<img src="http://192.168.2.39:8085/?action=stream" id="camerarov"/>
+</div>  
+
+
+<div id="horizon"><span id="attitude"></span></div>
+
+<div id ="pupitre">
+  <h1>Pupitre</h1> 
+    <h6>
+    <p id ="pplonge">Durée de plongée :</p>
+    <p id = "vbat1">Batterie 1 : </p>
+    <p id = "vbat2">Batterie 2 : </p>
+    <p id = "vbat3">Batterie 3 : </p>
+    
+    <p id="Pmoteur">Puissance Max moteurs :</p>
+    <p id="moteurdroit">Puissance moteur droit : </p>
+    <p id="moteurgauche">Puissance moteur gauche :</p>
+    <p id="moteurvertical">Puissance moteuer vertical :</p>
+    
+    <p id="goproconnect">GOPRO pas connectée</p>
+    <p id="pgopro">GOPRO : OFF</p>
+    <p id="stvideo">Enregistrement : NON</p>
+    <p id="repvideo">Repertoire video :</p>
+    <p id="repphoto">Répertoire photo : </p>
+    <p id="nbvideo">Nombre de video : 0</p>
+    <p id="nbphoto">Nombre de photo : 0</p>
+    
+    <p id="lddroite">Led droite : OFF</p>
+    <p id="ldgauche">Led gauche : OFF</p>
+    
+    
+    <p id="groll">gyro roll :</p>
+    <p id="gpitch">gyro pitch :</p>
+    <p id="gyaw">gyro yaw :</p>
+    
+    <p id="aroll">acc roll :</p>
+    <p id="apitch">acc pitch :</p>
+    <p id="ayaw">acc yaw :</p>
+    
+    <p id="magroll">mag roll :</p>
+    <p id="magpitch">mag pitch :</p>
+    <p id="magyaw">mag yaw :</p>
+    
+    </h6>
+    
+</div>
+
+    
+    
+
+    
+    
+<div id ="tt">
+    <p>
+    <input type="button" value="goprooff" id="gopro" />
+    <input type="button" value="goprostop" id="gopro2" />
+    <input type="button" value="goprovideo" id="gopro3" />
+    <input type="button" value="leddoff" id="ledd" />
+    <input type="button" value="ledgoff" id="ledg" />
+    <input type="button" value="debutplonge" id="plonge" />
+    
+    </p>
+    
+</div>
+    
+<script type="text/javascript">
+    var attitude = $.flightIndicator('#attitude', 'attitude', {size:200,roll: 0,pitch :0 , showBox : true} );
+
+     //IMU
+    socket.on('mouv', function(rollexp, pitchexp) {
+    attitude.setRoll(rollexp.angle*2);
+    attitude.setPitch(pitchexp.angle*2);
+    $('#groll').text('gyro roll : '+ rollexp.angle*2);
+    $('#gpitch').text('gyro pitch : '+ pitchexp.angle*2);
+    //console.log('roll' + rollexp.angle);
+    //console.log('pitch' + pitchexp.angle);
+    });
+    
+    
+    
+    
+    
+    
+    // CHRONOMETRE LA PLONGEE
+$('#plonge').click(function () {
+    var t=document.getElementById("plonge");
+    if (t.value =="debutplonge" ){
+        debut = new Date();
+        temps(debut);
+        t.value ="finplonge";
+        }
+    else {
+        clearTimeout(timerID)
+        t.value ="debutplonge";
+        }
+});
+    
+</script>
+
+<script type="text/javascript">
+// GOPRO ON OFF
+$('#gopro').click(function () {
+    var t=document.getElementById("gopro")
+    console.log (t.value);
+    if (t.value =="goprooff") {
+        socket.emit('gopro', 'on');
+        t.value ="goproon";
+        $('#gopro').css('background-color','#ff0606');
+        $('#pgopro').text('GOPRO : ON');
+        
+    }
+    else {
+       socket.emit('gopro', 'off');
+       t.value ="goprooff";
+       $('#gopro').css('background-color','#08930d');
+       $('#pgopro').text('GOPRO : OFF');
+    };
+    });
+</script>
+
+
+<script type="text/javascript">
+//GOPRO START STOP
+    $('#gopro2').click(function () {
+    var t=document.getElementById("gopro2")
+    console.log (t.value);
+    if (t.value =="goprostop") {
+        socket.emit('gopro', 'start');
+        t.value ="goprostart";
+        $('#gopro2').css('background-color','#ff0606');
+    }
+   else {
+        t.value ="goprostop";
+       socket.emit('gopro', 'stop');
+        $('#gopro2').css('background-color','#08930d');
+    };
+   });
+</script>   
+
+
+<script type="text/javascript">
+//GOPRO PHOTO VIDEO
+    $('#gopro3').click(function () {
+    var t=document.getElementById("gopro3")
+    console.log (t.value);
+    if (t.value =="goprovideo") {
+        socket.emit('gopromode', 'photo');
+        t.value ="goprophoto";
+         $('#gopro3').css('background-color','#ff0606');
+    }
+   else {
+        t.value ="goprovideo";
+       socket.emit('gopromode', 'video');
+       $('#gopro3').css('background-color','#08930d');
+    };
+   });
+</script>     
+    
+ 
+<script type="text/javascript">
+//LED DROITE
+    $('#ledd').click(function () {
+    var t=document.getElementById("ledd")
+    console.log (t.value);
+    if (t.value =="leddoff") {
+        socket.emit('leddroite', 'on');
+        t.value ="leddon";
+        $('#lddroite').text('Led droite : ON');
+        $('#ledd').css('background-color','#e2ff06');
+    }
+   else {
+        t.value ="leddoff";
+       $('#lddroite').text('Led droite : OFF');
+       socket.emit('leddroite', 'off');
+       $('#ledd').css('background-color','#5f5f5f');
+    };
+   });
+</script>    
+    
+ 
+<script type="text/javascript">
+//LED GAUCHE
+    $('#ledg').click(function () {
+    var t=document.getElementById("ledg")
+    console.log (t.value);
+    if (t.value =="ledgoff") {
+        socket.emit('ledgauche', 'on');
+        t.value ="ledgon";
+        $('#ldgauche').text('Led gauche : ON');
+         $('#ledg').css('background-color','#e2ff06');
+    }
+   else {
+        t.value ="ledgoff";
+       $('#ldgauche').text('Led gauche : OFF');
+       socket.emit('ledgauche', 'off');
+       $('#ledg').css('background-color','#5f5f5f');
+    };
+   });
+ </script> 
+  
+    <script type="text/javascript">
+//BATTERIE
+      socket.on('bat1', function(valbat1){  
+      var t=document.getElementById("vbat1");
+      t.value ='Batterie 1 :' + valbat1.toFixed(2) + "V";    
+      //console.log (t.value);
+      $('#vbat1').text( t.value);
+       });
+    
+        socket.on('bat2', function(valbat2){  
+      var t=document.getElementById("vbat2");
+      t.value ='Batterie 2 :' + valbat2.toFixed(2) + "V";    
+      //console.log (t.value);
+      $('#vbat2').text( t.value);
+       }); 
+        
+       socket.on('bat3', function(valbat3){  
+      var t=document.getElementById("vbat3");
+      t.value ='Batterie 3 :' + valbat3.toFixed(2) +"V";    
+      //console.log (t.value);
+      $('#vbat3').text( t.value);
+       });  
+        
+        
+        
+        
+        
+ </script> 
+    
+    
+
+</body>

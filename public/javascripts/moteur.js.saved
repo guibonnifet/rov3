@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="176" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.9.2" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<styles>
+<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Nimbus Roman No9 L; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="1">
+<p style="Normal" xid="2" props="text-align:left; dom-dir:ltr">	//GAMEPAD</p>
+<p style="Normal" xid="3" props="text-align:left; dom-dir:ltr">var haveEvents = 'GamepadEvent' in window;</p>
+<p style="Normal" xid="4" props="text-align:left; dom-dir:ltr">var controla = {};</p>
+<p style="Normal" xid="5" props="text-align:left; dom-dir:ltr">var rAF = window.mozRequestAnimationFrame ||</p>
+<p style="Normal" xid="6" props="text-align:left; dom-dir:ltr">		window.webkitRequestAnimationFrame ||</p>
+<p style="Normal" xid="7" props="text-align:left; dom-dir:ltr">		window.requestAnimationFrame;</p>
+<p style="Normal" xid="8" props="text-align:left; dom-dir:ltr">var vmot =[];</p>
+<p style="Normal" xid="9" props="text-align:left; dom-dir:ltr">var pmot =[];</p>
+<p style="Normal" xid="10" props="text-align:left; dom-dir:ltr">	function connecthandler(e) {</p>
+<p style="Normal" xid="11" props="text-align:left; dom-dir:ltr">		addgamepad(e.gamepad);</p>
+<p style="Normal" xid="12">	}</p>
+<p style="Normal" xid="13">	</p>
+<p style="Normal" xid="14" props="text-align:left; dom-dir:ltr">	function addgamepad(gamepad) {</p>
+<p style="Normal" xid="15" props="text-align:left; dom-dir:ltr">		controla[gamepad.index] = gamepad; var d = document.createElement("div");</p>
+<p style="Normal" xid="16" props="text-align:left; dom-dir:ltr">		console.log(gamepad.index);</p>
+<p style="Normal" xid="17" props="text-align:left; dom-dir:ltr">		d.setAttribute("id", "controller" + gamepad.index);</p>
+<p style="Normal" xid="18">		</p>
+<p style="Normal" xid="19" props="text-align:left; dom-dir:ltr">		var t = document.createElement("h1");</p>
+<p style="Normal" xid="20" props="text-align:left; dom-dir:ltr">		t.appendChild(document.createTextNode("gamepad: " + gamepad.id));</p>
+<p style="Normal" xid="21" props="text-align:left; dom-dir:ltr">		d.appendChild(t);</p>
+<p style="Normal" xid="22" props="text-align:left; dom-dir:ltr">		var b = document.createElement("div");</p>
+<p style="Normal" xid="23" props="text-align:left; dom-dir:ltr">		b.className = "buttons";</p>
+<p style="Normal" xid="24">		</p>
+<p style="Normal" xid="25" props="text-align:left; dom-dir:ltr">		for (var i=0; i&lt;gamepad.buttons.length; i++) {</p>
+<p style="Normal" xid="26" props="text-align:left; dom-dir:ltr">			var e = document.createElement("span");</p>
+<p style="Normal" xid="27" props="text-align:left; dom-dir:ltr">			e.className = "button";</p>
+<p style="Normal" xid="28" props="text-align:left; dom-dir:ltr">			//e.id = "b" + i;</p>
+<p style="Normal" xid="29" props="text-align:left; dom-dir:ltr">			e.innerHTML = i;</p>
+<p style="Normal" xid="30" props="text-align:left; dom-dir:ltr">			b.appendChild(e);</p>
+<p style="Normal" xid="31">		}</p>
+<p style="Normal" xid="32">		</p>
+<p style="Normal" xid="33" props="text-align:left; dom-dir:ltr">		d.appendChild(b);</p>
+<p style="Normal" xid="34" props="text-align:left; dom-dir:ltr">		var a = document.createElement("div");</p>
+<p style="Normal" xid="35" props="text-align:left; dom-dir:ltr">		a.className = "axes";</p>
+<p style="Normal" xid="36">		</p>
+<p style="Normal" xid="37" props="text-align:left; dom-dir:ltr">		for (var i=0; i&lt;gamepad.axes.length; i++) {</p>
+<p style="Normal" xid="38" props="text-align:left; dom-dir:ltr">			var e = document.createElement("progress");</p>
+<p style="Normal" xid="39" props="text-align:left; dom-dir:ltr">			var l = document.createElement("span");</p>
+<p style="Normal" xid="40" props="text-align:left; dom-dir:ltr">			e.className = "axis";</p>
+<p style="Normal" xid="41" props="text-align:left; dom-dir:ltr">			e.id = "a" + i;</p>
+<p style="Normal" xid="42" props="text-align:left; dom-dir:ltr">			e.setAttribute("max", "2");</p>
+<p style="Normal" xid="43" props="text-align:left; dom-dir:ltr">			e.setAttribute("value", "1");</p>
+<p style="Normal" xid="44" props="text-align:left; dom-dir:ltr">			e.innerHTML = i;</p>
+<p style="Normal" xid="45" props="text-align:left; dom-dir:ltr">			l.className="nbaxe";</p>
+<p style="Normal" xid="46" props="text-align:left; dom-dir:ltr">			l.innerHTML = "axe : " +i;</p>
+<p style="Normal" xid="47" props="text-align:left; dom-dir:ltr">			a.appendChild(l);</p>
+<p style="Normal" xid="48" props="text-align:left; dom-dir:ltr">			a.appendChild(e);</p>
+<p style="Normal" xid="49">		}</p>
+<p style="Normal" xid="50">		</p>
+<p style="Normal" xid="51" props="text-align:left; dom-dir:ltr">		d.appendChild(a);</p>
+<p style="Normal" xid="52" props="text-align:left; dom-dir:ltr">		document.getElementById("start").style.display = "none";</p>
+<p style="Normal" xid="53" props="text-align:left; dom-dir:ltr">		document.body.appendChild(d);</p>
+<p style="Normal" xid="54" props="text-align:left; dom-dir:ltr">		rAF(updateStatus);</p>
+<p style="Normal" xid="55">	}</p>
+<p style="Normal" xid="56"><c></c></p>
+<p style="Normal" xid="57" props="text-align:left; dom-dir:ltr">	function disconnecthandler(e) {</p>
+<p style="Normal" xid="58" props="text-align:left; dom-dir:ltr">		removegamepad(e.gamepad);</p>
+<p style="Normal" xid="59">	}	</p>
+<p style="Normal" xid="60"><c></c></p>
+<p style="Normal" xid="61" props="text-align:left; dom-dir:ltr">	function removegamepad(gamepad) {</p>
+<p style="Normal" xid="62" props="text-align:left; dom-dir:ltr">		var d = document.getElementById("controller" + gamepad.index);</p>
+<p style="Normal" xid="63" props="text-align:left; dom-dir:ltr">		document.body.removeChild(d);</p>
+<p style="Normal" xid="64" props="text-align:left; dom-dir:ltr">		delete controla[gamepad.index];</p>
+<p style="Normal" xid="65">	}</p>
+<p style="Normal" xid="66"><c></c></p>
+<p style="Normal" xid="67" props="text-align:left; dom-dir:ltr">	function updateStatus() {</p>
+<p style="Normal" xid="68" props="text-align:left; dom-dir:ltr">		if (!haveEvents) {</p>
+<p style="Normal" xid="69" props="text-align:left; dom-dir:ltr">			scangamepads();</p>
+<p style="Normal" xid="70">		}</p>
+<p style="Normal" xid="71">		</p>
+<p style="Normal" xid="72" props="text-align:left; dom-dir:ltr">		for (j in controla) {</p>
+<p style="Normal" xid="73" props="text-align:left; dom-dir:ltr">			var controller = controla[j];</p>
+<p style="Normal" xid="74" props="text-align:left; dom-dir:ltr">			var d = document.getElementById("controller" + j);</p>
+<p style="Normal" xid="75" props="text-align:left; dom-dir:ltr">			var buttons = d.getElementsByClassName("button");</p>
+<p style="Normal" xid="76">			</p>
+<p style="Normal" xid="77" props="text-align:left; dom-dir:ltr">				for (var i=0; i&lt;controller.buttons.length; i++) {</p>
+<p style="Normal" xid="78" props="text-align:left; dom-dir:ltr">				var b = buttons[i];</p>
+<p style="Normal" xid="79" props="text-align:left; dom-dir:ltr">				var val = controller.buttons[i];</p>
+<p style="Normal" xid="80" props="text-align:left; dom-dir:ltr">				var pressed = val == 1.0;</p>
+<p style="Normal" xid="81" props="text-align:left; dom-dir:ltr">				if (typeof(val) == "object") {</p>
+<p style="Normal" xid="82" props="text-align:left; dom-dir:ltr">					pressed = val.pressed;</p>
+<p style="Normal" xid="83" props="text-align:left; dom-dir:ltr">					val = val.value;</p>
+<p style="Normal" xid="84">				}</p>
+<p style="Normal" xid="85" props="text-align:left; dom-dir:ltr">				var pct = Math.round(val * 100) + "%"</p>
+<p style="Normal" xid="86" props="text-align:left; dom-dir:ltr">				b.style.backgroundSize = pct + " " + pct;</p>
+<p style="Normal" xid="87" props="text-align:left; dom-dir:ltr">				if (pressed) {</p>
+<p style="Normal" xid="88" props="text-align:left; dom-dir:ltr">					b.className = "button pressed";</p>
+<p style="Normal" xid="89" props="text-align:left; dom-dir:ltr">				} else {</p>
+<p style="Normal" xid="90" props="text-align:left; dom-dir:ltr">				b.className = "button";</p>
+<p style="Normal" xid="91">				}</p>
+<p style="Normal" xid="92">				}</p>
+<p style="Normal" xid="93"><c></c></p>
+<p style="Normal" xid="94" props="text-align:left; dom-dir:ltr">				var axes = d.getElementsByClassName("axis");</p>
+<p style="Normal" xid="95" props="text-align:left; dom-dir:ltr">				var valaxe = d.getElementsByClassName("nbaxe");</p>
+<p style="Normal" xid="96">				</p>
+<p style="Normal" xid="97" props="text-align:left; dom-dir:ltr">				for (var i=0; i&lt;controller.axes.length; i++) {</p>
+<p style="Normal" xid="98">				</p>
+<p style="Normal" xid="99" props="text-align:left; dom-dir:ltr">                    // moteur droit et gauche</p>
+<p style="Normal" xid="100" props="text-align:left; dom-dir:ltr">                    var test;</p>
+<p style="Normal" xid="101" props="text-align:left; dom-dir:ltr">					var a = axes[i];</p>
+<p style="Normal" xid="102" props="text-align:left; dom-dir:ltr">					var m=valaxe[i];</p>
+<p style="Normal" xid="103" props="text-align:left; dom-dir:ltr">					a.innerHTML = i + ": " + controller.axes[i].toFixed(4);</p>
+<p style="Normal" xid="104" props="text-align:left; dom-dir:ltr">					a.setAttribute("value", -controller.axes[i] + 0.4);</p>
+<p style="Normal" xid="105" props="text-align:left; dom-dir:ltr">					m.innerHTML = </p>
+<p style="Normal" xid="106" props="text-align:left; dom-dir:ltr">					test = controller.axes[i];</p>
+<p style="Normal" xid="107" props="text-align:left; dom-dir:ltr">       if (i === 0 ){</p>
+<p style="Normal" xid="108" props="text-align:left; dom-dir:ltr">           pmot[i] = -(Math.round(controller.axes[i]*100))+48;</p>
+<p style="Normal" xid="109" props="text-align:left; dom-dir:ltr">           //console.log("pmot" + i + pmot[i]);</p>
+<p style="Normal" xid="110">       }</p>
+<p style="Normal" xid="111" props="text-align:left; dom-dir:ltr">        if (i === 1 ) {</p>
+<p style="Normal" xid="112" props="text-align:left; dom-dir:ltr">            pmot[i] = -(Math.round(controller.axes[i]*100))+50;</p>
+<p style="Normal" xid="113" props="text-align:left; dom-dir:ltr">           //console.log("pmot" + i + pmot[i]);</p>
+<p style="Normal" xid="114">        }</p>
+<p style="Normal" xid="115" props="text-align:left; dom-dir:ltr">        if (i === 2 ) {</p>
+<p style="Normal" xid="116" props="text-align:left; dom-dir:ltr">            pmot[i] = -(Math.round(controller.axes[i]*100))+51;</p>
+<p style="Normal" xid="117" props="text-align:left; dom-dir:ltr">            //console.log("pmot" + i + pmot[i]);</p>
+<p style="Normal" xid="118">        }           </p>
+<p style="Normal" xid="119" props="text-align:left; dom-dir:ltr">        if (i === 3 ) {</p>
+<p style="Normal" xid="120" props="text-align:left; dom-dir:ltr">            pmot[i] = -(Math.round(controller.axes[i]*100))+56;</p>
+<p style="Normal" xid="121" props="text-align:left; dom-dir:ltr">            //console.log("pmot" + i + pmot[i]);</p>
+<p style="Normal" xid="122">        }            </p>
+<p style="Normal" xid="123">                    </p>
+<p style="Normal" xid="124" props="text-align:left; dom-dir:ltr">// axe 0 = direction droite gauche moteurs latéraux</p>
+<p style="Normal" xid="125" props="text-align:left; dom-dir:ltr">// axe 1 = acceleration et freinage moteurs latéraux</p>
+<p style="Normal" xid="126" props="text-align:left; dom-dir:ltr">// axe 2 = rien</p>
+<p style="Normal" xid="127" props="text-align:left; dom-dir:ltr">// axe 3 = acceleration et freinage moteur vertical                  </p>
+<p style="Normal" xid="128">                     </p>
+<p style="Normal" xid="129">                    </p>
+<p style="Normal" xid="130" props="text-align:left; dom-dir:ltr">                    //if (i===1) {</p>
+<p style="Normal" xid="131" props="text-align:left; dom-dir:ltr">					//	speed1=parseInt(m.innerHTML);</p>
+<p style="Normal" xid="132" props="text-align:left; dom-dir:ltr">						//console.log(a.innerHTML);</p>
+<p style="Normal" xid="133" props="text-align:left; dom-dir:ltr">						//console.log("test",test);</p>
+<p style="Normal" xid="134" props="text-align:left; dom-dir:ltr">						//console.log(speed1);</p>
+<p style="Normal" xid="135" props="text-align:left; dom-dir:ltr">						//socket.emit('moteur1', speed1);</p>
+<p style="Normal" xid="136">				//	};</p>
+<p style="Normal" xid="137">				}</p>
+<p style="Normal" xid="138">        </p>
+<p style="Normal" xid="139" props="text-align:left; dom-dir:ltr">            vmot[1] = pmot[1]-pmot[0]+90;</p>
+<p style="Normal" xid="140" props="text-align:left; dom-dir:ltr">            //console.log ("VMOT1 =" + vmot[1]);</p>
+<p style="Normal" xid="141" props="text-align:left; dom-dir:ltr">            $('#moteurdroit').text('Puissance moteur droit : ' + (vmot[1]-90));</p>
+<p style="Normal" xid="142" props="text-align:left; dom-dir:ltr">            vmot[2] = pmot[1] + pmot[0] -90;</p>
+<p style="Normal" xid="143" props="text-align:left; dom-dir:ltr">            //console.log ("VMOT2 =" +vmot[2]);</p>
+<p style="Normal" xid="144" props="text-align:left; dom-dir:ltr">            $('#moteurgauche').text('Puissance moteur gauche : ' + (vmot[2]-90));</p>
+<p style="Normal" xid="145" props="text-align:left; dom-dir:ltr">            vmot[3] = pmot[3];</p>
+<p style="Normal" xid="146" props="text-align:left; dom-dir:ltr">            //console.log("VMOT3 =" + vmot[3]);</p>
+<p style="Normal" xid="147" props="text-align:left; dom-dir:ltr">            $('#moteurvertical').text('Puissance moteur vertical : ' + (vmot[3]-90));</p>
+<p style="Normal" xid="148" props="text-align:left; dom-dir:ltr">            speed1=parseInt(vmot[1]);</p>
+<p style="Normal" xid="149" props="text-align:left; dom-dir:ltr">            speed2=parseInt(vmot[2]);</p>
+<p style="Normal" xid="150" props="text-align:left; dom-dir:ltr">            speed3=parseInt(vmot[3]);</p>
+<p style="Normal" xid="151" props="text-align:left; dom-dir:ltr">            socket.emit('moteur1', speed1);</p>
+<p style="Normal" xid="152" props="text-align:left; dom-dir:ltr">            socket.emit('moteur2', speed2);</p>
+<p style="Normal" xid="153" props="text-align:left; dom-dir:ltr">            socket.emit('moteur3', speed3);</p>
+<p style="Normal" xid="154">			}</p>
+<p style="Normal" xid="155" props="text-align:left; dom-dir:ltr">		rAF(updateStatus);</p>
+<p style="Normal" xid="156">	}</p>
+<p style="Normal" xid="157"><c></c></p>
+<p style="Normal" xid="158" props="text-align:left; dom-dir:ltr">	function scangamepads() {</p>
+<p style="Normal" xid="159" props="text-align:left; dom-dir:ltr">		var gamepads = navigator.getGamepads () ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);</p>
+<p style="Normal" xid="160" props="text-align:left; dom-dir:ltr">		for (var i = 0; i &lt; gamepads.length; i++) {</p>
+<p style="Normal" xid="161" props="text-align:left; dom-dir:ltr">			if (gamepads[i]) {</p>
+<p style="Normal" xid="162" props="text-align:left; dom-dir:ltr">				if (!(gamepads[i].index in controla)) {</p>
+<p style="Normal" xid="163" props="text-align:left; dom-dir:ltr">					addgamepad(gamepads[i]);</p>
+<p style="Normal" xid="164" props="text-align:left; dom-dir:ltr">				} else {</p>
+<p style="Normal" xid="165" props="text-align:left; dom-dir:ltr">				controla[gamepads[i].index] = gamepads[i];</p>
+<p style="Normal" xid="166">				}</p>
+<p style="Normal" xid="167">			}</p>
+<p style="Normal" xid="168">		}</p>
+<p style="Normal" xid="169">	}</p>
+<p style="Normal" xid="170"><c></c></p>
+<p style="Normal" xid="171" props="text-align:left; dom-dir:ltr">	window.addEventListener("gamepadconnected", connecthandler);</p>
+<p style="Normal" xid="172" props="text-align:left; dom-dir:ltr">	window.addEventListener("gamepaddisconnected", disconnecthandler);</p>
+<p style="Normal" xid="173" props="text-align:left; dom-dir:ltr">	if (!haveEvents) {</p>
+<p style="Normal" xid="174" props="text-align:left; dom-dir:ltr">		setInterval(scangamepads, 500);</p>
+<p style="Normal" xid="175">	}</p>
+<p style="Normal" xid="176" props="text-align:left; dom-dir:ltr">	//fin gamepad</p>
+</section>
+</abiword>

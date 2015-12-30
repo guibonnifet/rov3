@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="274" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.9.2" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<styles>
+<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Nimbus Roman No9 L; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="1">
+<p style="Normal" xid="2" props="text-align:left; dom-dir:ltr">&lt;head&gt;</p>
+<p style="Normal" xid="3" props="text-align:left; dom-dir:ltr">&lt;link rel="stylesheet"  href="/stylesheets/style.css" type="text/css"&gt;</p>
+<p style="Normal" xid="4" props="text-align:left; dom-dir:ltr">&lt;link rel="stylesheet"  href="/stylesheets/flightindicators.css" /&gt;</p>
+<p style="Normal" xid="5" props="text-align:left; dom-dir:ltr">&lt;meta charset="utf-8" /&gt;</p>
+<p style="Normal" xid="6" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/jquery-2.1.4.min.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="7" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/socket.io-1.3.5.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="8" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/config.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="9" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/moteur.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="10">   </p>
+<p style="Normal" xid="11" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/chronotest1.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="12" props="text-align:left; dom-dir:ltr">&lt;script src="/javascripts/jquery.flightindicators.js"&gt;&lt;/script&gt;</p>
+<p style="Normal" xid="13"><c></c></p>
+<p style="Normal" xid="14" props="text-align:left; dom-dir:ltr">&lt;title&gt;ROV OLERON&lt;/title&gt;</p>
+<p style="Normal" xid="15">    </p>
+<p style="Normal" xid="16" props="text-align:left; dom-dir:ltr">&lt;/head&gt;</p>
+<p style="Normal" xid="17"><c></c></p>
+<p style="Normal" xid="18" props="text-align:left; dom-dir:ltr">&lt;body&gt;</p>
+<p style="Normal" xid="19">    </p>
+<p style="Normal" xid="20" props="text-align:left; dom-dir:ltr">&lt;script&gt;</p>
+<p style="Normal" xid="21" props="text-align:left; dom-dir:ltr">    //var test = require(/javascripts/config);</p>
+<p style="Normal" xid="22" props="text-align:left; dom-dir:ltr">&lt;/script&gt;</p>
+<p style="Normal" xid="23"><c></c></p>
+<p style="Normal" xid="24" props="text-align:left; dom-dir:ltr">&lt;h6 id="start"&gt;Press a button on your controller to start&lt;/h6&gt;</p>
+<p style="Normal" xid="25"><c></c></p>
+<p style="Normal" xid="26"><c></c></p>
+<p style="Normal" xid="27" props="text-align:left; dom-dir:ltr">    &lt;script&gt;var socket = io.connect('192.168.2.39:3000');</p>
+<p style="Normal" xid="28" props="text-align:left; dom-dir:ltr">     var username = prompt('What\'s your username?');</p>
+<p style="Normal" xid="29" props="text-align:left; dom-dir:ltr">&lt;/script&gt;</p>
+<p style="Normal" xid="30"><c></c></p>
+<p style="Normal" xid="31"><c></c></p>
+<p style="Normal" xid="32">&lt;%</p>
+<p style="Normal" xid="33"><c></c></p>
+<p style="Normal" xid="34"><c></c></p>
+<p style="Normal" xid="35" props="text-align:left; dom-dir:ltr">var speed1 =90;</p>
+<p style="Normal" xid="36" props="text-align:left; dom-dir:ltr">var speed2 =90;</p>
+<p style="Normal" xid="37" props="text-align:left; dom-dir:ltr">var speed3 =90;</p>
+<p style="Normal" xid="38" props="text-align:left; dom-dir:ltr">var debut;</p>
+<p style="Normal" xid="39" props="text-align:left; dom-dir:ltr">var tempsplonge;</p>
+<p style="Normal" xid="40">   </p>
+<p style="Normal" xid="41">%&gt;</p>
+<p style="Normal" xid="42" props="text-align:left; dom-dir:ltr"> &lt;script type="text/javascript"&gt;   </p>
+<p style="Normal" xid="43" props="text-align:left; dom-dir:ltr">  //&lt;div&gt;</p>
+<p style="Normal" xid="44" props="text-align:left; dom-dir:ltr">//&lt;iframe src="http://192.168.2.39:8085/?action=stream" width="650" height="500" name="camerarov" id="camerarov"&gt;&lt;/iframe&gt;</p>
+<p style="Normal" xid="45" props="text-align:left; dom-dir:ltr"> //&lt;/div&gt;     </p>
+<p style="Normal" xid="46" props="text-align:left; dom-dir:ltr">  &lt;/script&gt; </p>
+<p style="Normal" xid="47" props="text-align:left; dom-dir:ltr">  &lt;div id="horizon"&gt;&lt;span id="attitude"&gt;lm&lt;/span&gt;&lt;/div&gt;</p>
+<p style="Normal" xid="48"><c></c></p>
+<p style="Normal" xid="49" props="text-align:left; dom-dir:ltr">&lt;div id ="pupitre"&gt;</p>
+<p style="Normal" xid="50" props="text-align:left; dom-dir:ltr">  &lt;h1&gt;Pupitre&lt;/h1&gt; </p>
+<p style="Normal" xid="51" props="text-align:left; dom-dir:ltr">    &lt;h6&gt;</p>
+<p style="Normal" xid="52" props="text-align:left; dom-dir:ltr">    &lt;p id ="pplonge"&gt;Durée de plongée :&lt;/p&gt;</p>
+<p style="Normal" xid="53" props="text-align:left; dom-dir:ltr">    &lt;p id = "vbat1"&gt;Batterie 1 : &lt;/p&gt;</p>
+<p style="Normal" xid="54" props="text-align:left; dom-dir:ltr">    &lt;p id = "vbat2"&gt;Batterie 2 : &lt;/p&gt;</p>
+<p style="Normal" xid="55" props="text-align:left; dom-dir:ltr">    &lt;p id = "vbat3"&gt;Batterie 3 : &lt;/p&gt;</p>
+<p style="Normal" xid="56">    </p>
+<p style="Normal" xid="57" props="text-align:left; dom-dir:ltr">    &lt;p id="Pmoteur"&gt;Puissance Max moteurs :&lt;/p&gt;</p>
+<p style="Normal" xid="58" props="text-align:left; dom-dir:ltr">    &lt;p id="moteurdroit"&gt;Puissance moteur droit : &lt;/p&gt;</p>
+<p style="Normal" xid="59" props="text-align:left; dom-dir:ltr">    &lt;p id="moteurgauche"&gt;Puissance moteur gauche :&lt;/p&gt;</p>
+<p style="Normal" xid="60" props="text-align:left; dom-dir:ltr">    &lt;p id="moteurvertical"&gt;Puissance moteuer vertical :&lt;/p&gt;</p>
+<p style="Normal" xid="61">    </p>
+<p style="Normal" xid="62" props="text-align:left; dom-dir:ltr">    &lt;p id="goproconnect"&gt;GOPRO pas connectée&lt;/p&gt;</p>
+<p style="Normal" xid="63" props="text-align:left; dom-dir:ltr">    &lt;p id="pgopro"&gt;GOPRO : OFF&lt;/p&gt;</p>
+<p style="Normal" xid="64" props="text-align:left; dom-dir:ltr">    &lt;p id="stvideo"&gt;Enregistrement : NON&lt;/p&gt;</p>
+<p style="Normal" xid="65" props="text-align:left; dom-dir:ltr">    &lt;p id="repvideo"&gt;Repertoire video :&lt;/p&gt;</p>
+<p style="Normal" xid="66" props="text-align:left; dom-dir:ltr">    &lt;p id="repphoto"&gt;Répertoire photo : &lt;/p&gt;</p>
+<p style="Normal" xid="67" props="text-align:left; dom-dir:ltr">    &lt;p id="nbvideo"&gt;Nombre de video : 0&lt;/p&gt;</p>
+<p style="Normal" xid="68" props="text-align:left; dom-dir:ltr">    &lt;p id="nbphoto"&gt;Nombre de photo : 0&lt;/p&gt;</p>
+<p style="Normal" xid="69">    </p>
+<p style="Normal" xid="70" props="text-align:left; dom-dir:ltr">    &lt;p id="lddroite"&gt;Led droite : OFF&lt;/p&gt;</p>
+<p style="Normal" xid="71" props="text-align:left; dom-dir:ltr">    &lt;p id="ldgauche"&gt;Led gauche : OFF&lt;/p&gt;</p>
+<p style="Normal" xid="72">    </p>
+<p style="Normal" xid="73">    </p>
+<p style="Normal" xid="74" props="text-align:left; dom-dir:ltr">    &lt;p id="groll"&gt;gyro roll :&lt;/p&gt;</p>
+<p style="Normal" xid="75" props="text-align:left; dom-dir:ltr">    &lt;p id="gpitch"&gt;gyro pitch :&lt;/p&gt;</p>
+<p style="Normal" xid="76" props="text-align:left; dom-dir:ltr">    &lt;p id="gyaw"&gt;gyro yaw :&lt;/p&gt;</p>
+<p style="Normal" xid="77">    </p>
+<p style="Normal" xid="78" props="text-align:left; dom-dir:ltr">    &lt;p id="aroll"&gt;acc roll :&lt;/p&gt;</p>
+<p style="Normal" xid="79" props="text-align:left; dom-dir:ltr">    &lt;p id="apitch"&gt;acc pitch :&lt;/p&gt;</p>
+<p style="Normal" xid="80" props="text-align:left; dom-dir:ltr">    &lt;p id="ayaw"&gt;acc yaw :&lt;/p&gt;</p>
+<p style="Normal" xid="81">    </p>
+<p style="Normal" xid="82" props="text-align:left; dom-dir:ltr">    &lt;p id="magroll"&gt;mag roll :&lt;/p&gt;</p>
+<p style="Normal" xid="83" props="text-align:left; dom-dir:ltr">    &lt;p id="magpitch"&gt;mag pitch :&lt;/p&gt;</p>
+<p style="Normal" xid="84" props="text-align:left; dom-dir:ltr">    &lt;p id="magyaw"&gt;mag yaw :&lt;/p&gt;</p>
+<p style="Normal" xid="85">    </p>
+<p style="Normal" xid="86" props="text-align:left; dom-dir:ltr">    &lt;/h6&gt;</p>
+<p style="Normal" xid="87">    </p>
+<p style="Normal" xid="88" props="text-align:left; dom-dir:ltr">&lt;/div&gt;</p>
+<p style="Normal" xid="89"><c></c></p>
+<p style="Normal" xid="90">    </p>
+<p style="Normal" xid="91">    </p>
+<p style="Normal" xid="92"><c></c></p>
+<p style="Normal" xid="93">    </p>
+<p style="Normal" xid="94">    </p>
+<p style="Normal" xid="95" props="text-align:left; dom-dir:ltr">&lt;div id ="tt"&gt;</p>
+<p style="Normal" xid="96" props="text-align:left; dom-dir:ltr">    &lt;p&gt;</p>
+<p style="Normal" xid="97" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="goprooff" id="gopro" /&gt;</p>
+<p style="Normal" xid="98" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="goprostop" id="gopro2" /&gt;</p>
+<p style="Normal" xid="99" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="goprovideo" id="gopro3" /&gt;</p>
+<p style="Normal" xid="100" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="leddoff" id="ledd" /&gt;</p>
+<p style="Normal" xid="101" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="ledgoff" id="ledg" /&gt;</p>
+<p style="Normal" xid="102" props="text-align:left; dom-dir:ltr">    &lt;input type="button" value="debutplonge" id="plonge" /&gt;</p>
+<p style="Normal" xid="103">    </p>
+<p style="Normal" xid="104" props="text-align:left; dom-dir:ltr">    &lt;/p&gt;</p>
+<p style="Normal" xid="105">    </p>
+<p style="Normal" xid="106" props="text-align:left; dom-dir:ltr">&lt;/div&gt;</p>
+<p style="Normal" xid="107">    </p>
+<p style="Normal" xid="108" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="109" props="text-align:left; dom-dir:ltr">    var attitude = $.flightIndicator('#attitude', 'attitude', {size:200,roll: 0,pitch :0 , showBox : true} );</p>
+<p style="Normal" xid="110"><c></c></p>
+<p style="Normal" xid="111" props="text-align:left; dom-dir:ltr">     //IMU</p>
+<p style="Normal" xid="112" props="text-align:left; dom-dir:ltr">    socket.on('mouv', function(rollexp, pitchexp) {</p>
+<p style="Normal" xid="113" props="text-align:left; dom-dir:ltr">    attitude.setRoll(rollexp.angle*2);</p>
+<p style="Normal" xid="114" props="text-align:left; dom-dir:ltr">    attitude.setPitch(pitchexp.angle*2);</p>
+<p style="Normal" xid="115" props="text-align:left; dom-dir:ltr">    $('#groll').text('gyro roll : '+ rollexp.angle*2);</p>
+<p style="Normal" xid="116" props="text-align:left; dom-dir:ltr">    $('#gpitch').text('gyro pitch : '+ pitchexp.angle*2);</p>
+<p style="Normal" xid="117" props="text-align:left; dom-dir:ltr">    //console.log('roll' + rollexp.angle);</p>
+<p style="Normal" xid="118" props="text-align:left; dom-dir:ltr">    //console.log('pitch' + pitchexp.angle);</p>
+<p style="Normal" xid="119">    });</p>
+<p style="Normal" xid="120">    </p>
+<p style="Normal" xid="121">    </p>
+<p style="Normal" xid="122">    </p>
+<p style="Normal" xid="123">    </p>
+<p style="Normal" xid="124">    </p>
+<p style="Normal" xid="125">    </p>
+<p style="Normal" xid="126" props="text-align:left; dom-dir:ltr">    // CHRONOMETRE LA PLONGEE</p>
+<p style="Normal" xid="127" props="text-align:left; dom-dir:ltr">$('#plonge').click(function () {</p>
+<p style="Normal" xid="128" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("plonge");</p>
+<p style="Normal" xid="129" props="text-align:left; dom-dir:ltr">    if (t.value =="debutplonge" ){</p>
+<p style="Normal" xid="130" props="text-align:left; dom-dir:ltr">        debut = new Date();</p>
+<p style="Normal" xid="131" props="text-align:left; dom-dir:ltr">        temps(debut);</p>
+<p style="Normal" xid="132" props="text-align:left; dom-dir:ltr">        t.value ="finplonge";</p>
+<p style="Normal" xid="133">        }</p>
+<p style="Normal" xid="134" props="text-align:left; dom-dir:ltr">    else {</p>
+<p style="Normal" xid="135" props="text-align:left; dom-dir:ltr">        clearTimeout(timerID)</p>
+<p style="Normal" xid="136" props="text-align:left; dom-dir:ltr">        t.value ="debutplonge";</p>
+<p style="Normal" xid="137">        }</p>
+<p style="Normal" xid="138">});</p>
+<p style="Normal" xid="139">    </p>
+<p style="Normal" xid="140" props="text-align:left; dom-dir:ltr">&lt;/script&gt;</p>
+<p style="Normal" xid="141"><c></c></p>
+<p style="Normal" xid="142" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="143" props="text-align:left; dom-dir:ltr">// GOPRO ON OFF</p>
+<p style="Normal" xid="144" props="text-align:left; dom-dir:ltr">$('#gopro').click(function () {</p>
+<p style="Normal" xid="145" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("gopro")</p>
+<p style="Normal" xid="146" props="text-align:left; dom-dir:ltr">    console.log (t.value);</p>
+<p style="Normal" xid="147" props="text-align:left; dom-dir:ltr">    if (t.value =="goprooff") {</p>
+<p style="Normal" xid="148" props="text-align:left; dom-dir:ltr">        socket.emit('gopro', 'on');</p>
+<p style="Normal" xid="149" props="text-align:left; dom-dir:ltr">        t.value ="goproon";</p>
+<p style="Normal" xid="150" props="text-align:left; dom-dir:ltr">        $('#gopro').css('background-color','#ff0606');</p>
+<p style="Normal" xid="151" props="text-align:left; dom-dir:ltr">        $('#pgopro').text('GOPRO : ON');</p>
+<p style="Normal" xid="152">        </p>
+<p style="Normal" xid="153">    }</p>
+<p style="Normal" xid="154" props="text-align:left; dom-dir:ltr">    else {</p>
+<p style="Normal" xid="155" props="text-align:left; dom-dir:ltr">       socket.emit('gopro', 'off');</p>
+<p style="Normal" xid="156" props="text-align:left; dom-dir:ltr">       t.value ="goprooff";</p>
+<p style="Normal" xid="157" props="text-align:left; dom-dir:ltr">       $('#gopro').css('background-color','#08930d');</p>
+<p style="Normal" xid="158" props="text-align:left; dom-dir:ltr">       $('#pgopro').text('GOPRO : OFF');</p>
+<p style="Normal" xid="159">    };</p>
+<p style="Normal" xid="160">    });</p>
+<p style="Normal" xid="161" props="text-align:left; dom-dir:ltr">&lt;/script&gt;</p>
+<p style="Normal" xid="162"><c></c></p>
+<p style="Normal" xid="163"><c></c></p>
+<p style="Normal" xid="164" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="165" props="text-align:left; dom-dir:ltr">//GOPRO START STOP</p>
+<p style="Normal" xid="166" props="text-align:left; dom-dir:ltr">    $('#gopro2').click(function () {</p>
+<p style="Normal" xid="167" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("gopro2")</p>
+<p style="Normal" xid="168" props="text-align:left; dom-dir:ltr">    console.log (t.value);</p>
+<p style="Normal" xid="169" props="text-align:left; dom-dir:ltr">    if (t.value =="goprostop") {</p>
+<p style="Normal" xid="170" props="text-align:left; dom-dir:ltr">        socket.emit('gopro', 'start');</p>
+<p style="Normal" xid="171" props="text-align:left; dom-dir:ltr">        t.value ="goprostart";</p>
+<p style="Normal" xid="172" props="text-align:left; dom-dir:ltr">        $('#gopro2').css('background-color','#ff0606');</p>
+<p style="Normal" xid="173">    }</p>
+<p style="Normal" xid="174" props="text-align:left; dom-dir:ltr">   else {</p>
+<p style="Normal" xid="175" props="text-align:left; dom-dir:ltr">        t.value ="goprostop";</p>
+<p style="Normal" xid="176" props="text-align:left; dom-dir:ltr">       socket.emit('gopro', 'stop');</p>
+<p style="Normal" xid="177" props="text-align:left; dom-dir:ltr">        $('#gopro2').css('background-color','#08930d');</p>
+<p style="Normal" xid="178">    };</p>
+<p style="Normal" xid="179">   });</p>
+<p style="Normal" xid="180" props="text-align:left; dom-dir:ltr">&lt;/script&gt;   </p>
+<p style="Normal" xid="181"><c></c></p>
+<p style="Normal" xid="182"><c></c></p>
+<p style="Normal" xid="183" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="184" props="text-align:left; dom-dir:ltr">//GOPRO PHOTO VIDEO</p>
+<p style="Normal" xid="185" props="text-align:left; dom-dir:ltr">    $('#gopro3').click(function () {</p>
+<p style="Normal" xid="186" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("gopro3")</p>
+<p style="Normal" xid="187" props="text-align:left; dom-dir:ltr">    console.log (t.value);</p>
+<p style="Normal" xid="188" props="text-align:left; dom-dir:ltr">    if (t.value =="goprovideo") {</p>
+<p style="Normal" xid="189" props="text-align:left; dom-dir:ltr">        socket.emit('gopromode', 'photo');</p>
+<p style="Normal" xid="190" props="text-align:left; dom-dir:ltr">        t.value ="goprophoto";</p>
+<p style="Normal" xid="191" props="text-align:left; dom-dir:ltr">         $('#gopro3').css('background-color','#ff0606');</p>
+<p style="Normal" xid="192">    }</p>
+<p style="Normal" xid="193" props="text-align:left; dom-dir:ltr">   else {</p>
+<p style="Normal" xid="194" props="text-align:left; dom-dir:ltr">        t.value ="goprovideo";</p>
+<p style="Normal" xid="195" props="text-align:left; dom-dir:ltr">       socket.emit('gopromode', 'video');</p>
+<p style="Normal" xid="196" props="text-align:left; dom-dir:ltr">       $('#gopro3').css('background-color','#08930d');</p>
+<p style="Normal" xid="197">    };</p>
+<p style="Normal" xid="198">   });</p>
+<p style="Normal" xid="199" props="text-align:left; dom-dir:ltr">&lt;/script&gt;     </p>
+<p style="Normal" xid="200">    </p>
+<p style="Normal" xid="201"> </p>
+<p style="Normal" xid="202" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="203" props="text-align:left; dom-dir:ltr">//LED DROITE</p>
+<p style="Normal" xid="204" props="text-align:left; dom-dir:ltr">    $('#ledd').click(function () {</p>
+<p style="Normal" xid="205" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("ledd")</p>
+<p style="Normal" xid="206" props="text-align:left; dom-dir:ltr">    console.log (t.value);</p>
+<p style="Normal" xid="207" props="text-align:left; dom-dir:ltr">    if (t.value =="leddoff") {</p>
+<p style="Normal" xid="208" props="text-align:left; dom-dir:ltr">        socket.emit('leddroite', 'on');</p>
+<p style="Normal" xid="209" props="text-align:left; dom-dir:ltr">        t.value ="leddon";</p>
+<p style="Normal" xid="210" props="text-align:left; dom-dir:ltr">        $('#lddroite').text('Led droite : ON');</p>
+<p style="Normal" xid="211" props="text-align:left; dom-dir:ltr">        $('#ledd').css('background-color','#e2ff06');</p>
+<p style="Normal" xid="212">    }</p>
+<p style="Normal" xid="213" props="text-align:left; dom-dir:ltr">   else {</p>
+<p style="Normal" xid="214" props="text-align:left; dom-dir:ltr">        t.value ="leddoff";</p>
+<p style="Normal" xid="215" props="text-align:left; dom-dir:ltr">       $('#lddroite').text('Led droite : OFF');</p>
+<p style="Normal" xid="216" props="text-align:left; dom-dir:ltr">       socket.emit('leddroite', 'off');</p>
+<p style="Normal" xid="217" props="text-align:left; dom-dir:ltr">       $('#ledd').css('background-color','#5f5f5f');</p>
+<p style="Normal" xid="218">    };</p>
+<p style="Normal" xid="219">   });</p>
+<p style="Normal" xid="220" props="text-align:left; dom-dir:ltr">&lt;/script&gt;    </p>
+<p style="Normal" xid="221">    </p>
+<p style="Normal" xid="222"> </p>
+<p style="Normal" xid="223" props="text-align:left; dom-dir:ltr">&lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="224" props="text-align:left; dom-dir:ltr">//LED GAUCHE</p>
+<p style="Normal" xid="225" props="text-align:left; dom-dir:ltr">    $('#ledg').click(function () {</p>
+<p style="Normal" xid="226" props="text-align:left; dom-dir:ltr">    var t=document.getElementById("ledg")</p>
+<p style="Normal" xid="227" props="text-align:left; dom-dir:ltr">    console.log (t.value);</p>
+<p style="Normal" xid="228" props="text-align:left; dom-dir:ltr">    if (t.value =="ledgoff") {</p>
+<p style="Normal" xid="229" props="text-align:left; dom-dir:ltr">        socket.emit('ledgauche', 'on');</p>
+<p style="Normal" xid="230" props="text-align:left; dom-dir:ltr">        t.value ="ledgon";</p>
+<p style="Normal" xid="231" props="text-align:left; dom-dir:ltr">        $('#ldgauche').text('Led gauche : ON');</p>
+<p style="Normal" xid="232" props="text-align:left; dom-dir:ltr">         $('#ledg').css('background-color','#e2ff06');</p>
+<p style="Normal" xid="233">    }</p>
+<p style="Normal" xid="234" props="text-align:left; dom-dir:ltr">   else {</p>
+<p style="Normal" xid="235" props="text-align:left; dom-dir:ltr">        t.value ="ledgoff";</p>
+<p style="Normal" xid="236" props="text-align:left; dom-dir:ltr">       $('#ldgauche').text('Led gauche : OFF');</p>
+<p style="Normal" xid="237" props="text-align:left; dom-dir:ltr">       socket.emit('ledgauche', 'off');</p>
+<p style="Normal" xid="238" props="text-align:left; dom-dir:ltr">       $('#ledg').css('background-color','#5f5f5f');</p>
+<p style="Normal" xid="239">    };</p>
+<p style="Normal" xid="240">   });</p>
+<p style="Normal" xid="241" props="text-align:left; dom-dir:ltr"> &lt;/script&gt; </p>
+<p style="Normal" xid="242">  </p>
+<p style="Normal" xid="243" props="text-align:left; dom-dir:ltr">    &lt;script type="text/javascript"&gt;</p>
+<p style="Normal" xid="244" props="text-align:left; dom-dir:ltr">//BATTERIE</p>
+<p style="Normal" xid="245" props="text-align:left; dom-dir:ltr">      socket.on('bat1', function(valbat1){  </p>
+<p style="Normal" xid="246" props="text-align:left; dom-dir:ltr">      var t=document.getElementById("vbat1");</p>
+<p style="Normal" xid="247" props="text-align:left; dom-dir:ltr">      t.value ='Batterie 1 :' + valbat1.toFixed(2) + "V";    </p>
+<p style="Normal" xid="248" props="text-align:left; dom-dir:ltr">      //console.log (t.value);</p>
+<p style="Normal" xid="249" props="text-align:left; dom-dir:ltr">      $('#vbat1').text( t.value);</p>
+<p style="Normal" xid="250">       });</p>
+<p style="Normal" xid="251">    </p>
+<p style="Normal" xid="252" props="text-align:left; dom-dir:ltr">        socket.on('bat2', function(valbat2){  </p>
+<p style="Normal" xid="253" props="text-align:left; dom-dir:ltr">      var t=document.getElementById("vbat2");</p>
+<p style="Normal" xid="254" props="text-align:left; dom-dir:ltr">      t.value ='Batterie 2 :' + valbat2.toFixed(2) + "V";    </p>
+<p style="Normal" xid="255" props="text-align:left; dom-dir:ltr">      //console.log (t.value);</p>
+<p style="Normal" xid="256" props="text-align:left; dom-dir:ltr">      $('#vbat2').text( t.value);</p>
+<p style="Normal" xid="257">       }); </p>
+<p style="Normal" xid="258">        </p>
+<p style="Normal" xid="259" props="text-align:left; dom-dir:ltr">       socket.on('bat3', function(valbat3){  </p>
+<p style="Normal" xid="260" props="text-align:left; dom-dir:ltr">      var t=document.getElementById("vbat3");</p>
+<p style="Normal" xid="261" props="text-align:left; dom-dir:ltr">      t.value ='Batterie 3 :' + valbat3.toFixed(2) +"V";    </p>
+<p style="Normal" xid="262" props="text-align:left; dom-dir:ltr">      //console.log (t.value);</p>
+<p style="Normal" xid="263" props="text-align:left; dom-dir:ltr">      $('#vbat3').text( t.value);</p>
+<p style="Normal" xid="264">       });  </p>
+<p style="Normal" xid="265">        </p>
+<p style="Normal" xid="266">        </p>
+<p style="Normal" xid="267">        </p>
+<p style="Normal" xid="268">        </p>
+<p style="Normal" xid="269">        </p>
+<p style="Normal" xid="270" props="text-align:left; dom-dir:ltr"> &lt;/script&gt; </p>
+<p style="Normal" xid="271">    </p>
+<p style="Normal" xid="272">    </p>
+<p style="Normal" xid="273"><c></c></p>
+<p style="Normal" xid="274" props="text-align:left; dom-dir:ltr">&lt;/body&gt;</p>
+</section>
+</abiword>
